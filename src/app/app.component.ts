@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Quote } from './quote';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  quotes:string[];
-
-  constructor(){
-    this.quotes = ['Surround yourself with positive people and you’ll be a positive person.', 'It’s almost always possible to be honest and positive.', 'I surround myself with positive, productive people of good will and decency.', 
-    ]
-  }
+  quotes:Quote[] = [ 
+    {quote:'I surround myself with positive, productive people of good will and decency.', arthur:'Ted Nugent', name:'Venus Mwende'},
+    {quote:'Keep your face to the sunshine and you cannot see a shadow.', arthur:'Helen Keller', name:'Venus Mwende'},
+    {quote:'The positive thinker sees the invisible, feels the intangible, and achieves the impossible.', arthur:'Winston Churchill', name:'Venus Mwende'}
+  ]
 }
