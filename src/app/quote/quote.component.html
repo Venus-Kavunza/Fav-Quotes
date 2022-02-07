@@ -1,7 +1,10 @@
 <div>
     <h1>My Quotes</h1>
+    <hr>
     <ul>
       <li *ngFor='let quotes of quotes'>
-        {{ quotes.quote }}, {{ quotes.arthur }}, {{ quotes.name }} </li>
+        {{ quotes.quote }}, {{ quotes.arthur }}, {{ quotes.name }} 
+        <app-quote-detail [quote]='quotes'></app-quote-detail>
+      </li>  
     </ul>
   </div>
