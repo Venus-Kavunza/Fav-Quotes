@@ -9,7 +9,7 @@
             <button (click)="toggleDetails(i)">Toggle Details</button>
           </div>
           
-          <app-quote-detail *ngIf="quotes.showDescription" [quote]='quotes' (isComplete)="completeQuote($event,i)"></app-quote-detail>
+          <app-quote-detail *ngIf="quotes.showDescription" [quote]='quotes' (isComplete)="deleteQuote($event,i)"></app-quote-detail>
         </div>  
 
       </div>
