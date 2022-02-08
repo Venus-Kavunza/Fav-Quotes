@@ -8,11 +8,13 @@
             <h4 id="{{ i }}" appBestQuote >{{ quotes.quote }}, {{ quotes.arthur }}, {{ quotes.name }}</h4> 
             <button (click)="toggleDetails(i)" class="btn btn-primary" id="toggle">Toggle Details</button>
           </div>
-          
           <div *ngIf="quotes.showDescription">
             <app-quote-detail [quote]='quotes' (isComplete)="deleteQuote($event,i)"></app-quote-detail>
           </div>
-          
+          <div class="quote-votes">
+            <button id="up" (click)="upvote(i)" class="btn btn-primary">Upvote</button>
+            <button id="down" (click)="downvote(i)" class="btn btn-primary">Downvote</button>
+          </div>
         </div>  
 
       </div>

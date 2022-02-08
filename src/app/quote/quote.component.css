@@ -7,3 +7,8 @@ h1 {
     text-align: center;
     font-style: italic;
 }
+#up, #down {
+    background-color: rgb(209, 154, 154);
+    color:black;
+    border-color: grey;
+}

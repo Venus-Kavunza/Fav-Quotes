@@ -12,7 +12,30 @@ export class QuoteComponent implements OnInit {
     new Quote ('I surround myself with positive, productive people of good will and decency.', 'Ted Nugent', 'Venus Mwende', 'First Quote', new Date(2022,1,5)  ),
     new Quote ('Keep your face to the sunshine and you cannot see a shadow.', 'Helen Keller', 'Venus Mwende', 'Second Qoute', new Date(2022,1,10)),
     new Quote ('The positive thinker sees the invisible, feels the intangible, and achieves the impossible.', 'Winston Churchill', 'Venus Mwende', 'Third Quote', new Date(2022,1,29))
-  ]
+  ];
+  firstNo!:number
+  lastNo!:number
+  counter!:number
+
+  upvote(i: number){
+    this.quotes[i].upvotes+=1
+  }
+  downvote(i:number){
+    this.quotes[i].downvotes+=1
+  }
+  toWritten(i: number){
+    this.quotes.splice(i, 1)
+  }
+  highestUpvote(){
+    this.firstNo = 0
+    this.lastNo = 0
+
+    for(this.counter=0 ; this.counter < this.quotes.length; this.counter++) {
+      this.lastNo = this.quotes[this.counter].upvotes;
+      if(this.lastNo > this.firstNo){this.firstNo = this.lastNo}
+    }
+    return this.firstNo
+  }
 
   toggleDetails(index:any){
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
