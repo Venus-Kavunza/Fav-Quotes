@@ -6,7 +6,7 @@
         <div *ngFor='let quotes of quotes;let i = index'>
           <div>
             <h4 id="{{ i }}" appBestQuote >{{ quotes.quote }}, {{ quotes.arthur }}, {{ quotes.name }}</h4> 
-            <button (click)="toggleDetails(i)" class="btn btn-primary">Toggle Details</button>
+            <button (click)="toggleDetails(i)" class="btn btn-primary" id="toggle">Toggle Details</button>
           </div>
           
           <div *ngIf="quotes.showDescription">

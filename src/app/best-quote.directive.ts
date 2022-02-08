@@ -8,7 +8,7 @@ export class BestQuoteDirective {
   constructor(private elem:ElementRef) {}
   
   @HostListener("click") onClicks(){
-    this.textDeco("line-through")
+    this.textDeco("None")
   }
   @HostListener("dblclick") onDoubleClicks(){
     this.textDeco("None")
