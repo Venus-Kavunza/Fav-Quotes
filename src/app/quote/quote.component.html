@@ -1,10 +1,12 @@
 <div>
-    <h1>My Quotes</h1>
+    <h1>Positivity Quotes</h1>
     <hr>
     <ul>
-      <li *ngFor='let quotes of quotes'>
-        {{ quotes.quote }}, {{ quotes.arthur }}, {{ quotes.name }} 
-        <app-quote-detail [quote]='quotes'></app-quote-detail>
-      </li>  
+      <div *ngFor='let quotes of quotes;let i = index'>
+        <li>{{ quotes.quote }}, {{ quotes.arthur }}, {{ quotes.name }}</li> 
+        <button (click)="toggleDetails(i)">Toggle Details</button>
+        <button></button>
+        <app-quote-detail *ngIf="quote.showDescription" [quote]='quotes'></app-quote-detail>
+      </div>  
     </ul>
   </div>
