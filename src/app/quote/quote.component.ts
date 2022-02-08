@@ -9,7 +9,7 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   quotes:Quote[] = [ 
-    new Quote ('I surround myself with positive, productive people of good will and decency.', 'Ted Nugent', 'Venus Mwende', 'First Quote'),
+    new Quote ('I surround myself with positive, productive people of good will and decency.', 'Ted Nugent', 'Venus Mwende', 'First Quote', ),
     new Quote ('Keep your face to the sunshine and you cannot see a shadow.', 'Helen Keller', 'Venus Mwende', 'Second Qoute'),
     new Quote ('The positive thinker sees the invisible, feels the intangible, and achieves the impossible.', 'Winston Churchill', 'Venus Mwende', 'Third Quote')
   ]
