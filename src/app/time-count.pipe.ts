@@ -4,9 +4,30 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'timeCount'
 })
 export class TimeCountPipe implements PipeTransform {
+  transform(value:any): string {
+    let countDown: string ="";
+    let today: any = new Date();
+    var difference = Math.abs(value - today) /1000;
+    var days       = Math.floor(difference / 86400);
+    if(days > 0){
+      countDown    +=Math.floor(days) + "days";
+    }
+    difference    -= days * 86400;
+    var hours      = Math.floor(difference / 3600) % 24;
+    if(hours > 0){
+      countDown   += Math.floor(hours)+" hrs ";
+    }
+    difference    -= hours * 3600;
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+    var minutes    = Math.floor(difference / 60) % 60;
+    if(minutes > 0){
+      countDown   += Math.floor(minutes)+" mins ";
+    }
+    difference    -= minutes * 60;
+    var seconds    = difference % 60;
+    if(seconds > 0){
+      countDown  += Math.floor(seconds)+" secs ";
+    }
+    return countDown;
   }
-
-}
+} 
