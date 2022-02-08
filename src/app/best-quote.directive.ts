@@ -1,12 +1,22 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appBestQuote]'
 })
 export class BestQuoteDirective {
 
-  constructor(private elem:ElementRef) {
-    this.elem.nativeElement.style.textDecoration='line-through';
-   }
+  constructor(private elem:ElementRef) {}
+  
+  @HostListener("click") onClicks(){
+    this.textDeco("line-through")
+  }
+  @HostListener("dblclick") onDoubleClicks(){
+    this.textDeco("None")
+  }
+    private textDeco(action:string){
+      this.elem.nativeElement.style.textDecoration=action;
 
-}
+    }
+  }
+
+
